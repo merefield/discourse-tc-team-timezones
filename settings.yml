@@ -1,7 +1,5 @@
 team_timezones_group:
   default: 'staff'
-  type: list
-  list_type: group
 team_timezones_categories:
   default: 'general'
   type: list
