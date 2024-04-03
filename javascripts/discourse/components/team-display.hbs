@@ -1,0 +1,27 @@
+{{#if this.shouldDisplay}}
+  <div class="team-timezone-vis">
+    <table class="time-table">
+      <thead>
+          <th class="team-timezone-table-title">{{this.title}}</th>
+          {{#each this.hours as |hour|}}
+            <th class="{{hour.class}}">{{hour.hour}}</th>
+          {{/each}}
+      </thead>
+      <tbody>
+        {{#each this.members as |member|}}
+          <tr class="team-timezone-row">
+            <td class="team-timezone-user">
+              <a href="{{member.path}}" data-user-card="{{member.username}}">
+               {{avatar member.user imageSize="small"}}
+               <span class="team-timezone-username">{{member.displayName}}</span>
+              </a>
+            </td>
+            {{#each member.row as |cell|}}
+              <td class="{{cell.class}}" style="{{cell.style}}"></td>
+            {{/each}}
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+{{/if}}

@@ -1,0 +1,30 @@
+team_timezones_group:
+  default: 'staff'
+  type: list
+  list_type: group
+team_timezones_categories:
+  default: 'general'
+  type: list
+  list_type: category
+team_timezones_tags:
+  default: ''
+  type: list
+  list_type: tag
+team_timezones_mode:
+  default: "band"
+  type: enum
+  choices:
+    - band
+    - zones
+team_timezones_availability_curve_power_function:
+  default: 6
+  min: 3
+  max: 12
+team_timezones_availability_origin_offset:
+  default: 0
+  min: -12
+  max: 12
+team_timezones_morning_start: 9
+team_timezones_evening_start: 18
+team_timezones_background_colour: '#FFFFFF'
+team_timezones_available_colour: '#0088cc'
