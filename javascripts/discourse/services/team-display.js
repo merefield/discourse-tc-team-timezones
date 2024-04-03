@@ -24,7 +24,7 @@ export default class TeamDisplayService extends Service {
     let teamTimezoneTags = [];
   
     if (settings.team_timezones_categories !== "") {
-      const teamTimezoneCategories = settings.team_timezones_categories
+      teamTimezoneCategories = settings.team_timezones_categories
         .split("|")
         .map((id) => parseInt(id, 10));
     }
