@@ -131,17 +131,29 @@ export default class TeamDisplayComponent extends Component {
 
       this.members = result.members;
 
-      this.members.sort((a, b) => a.username.localeCompare(b.username));
-
       let currentHour = this.currentHour();
 
       let timesScore = (offset, currentHour) => {
         return Math.pow(Math.sin((Math.PI / 24) * (offset + currentHour)), 4);
       };
 
-      this.members.sort((a, b) =>
-        timesScore(a.offset, currentHour) < timesScore(b.offset, currentHour) ? 1 : -1
-      );
+      this.members.sort((a, b) => {
+        let nameA = a.displayName.toLowerCase();
+        let nameB = b.displayName.toLowerCase();
+        let nameComparison = 0;
+
+        if(nameA < nameB) {nameComparison = -1;}
+        if(nameB > nameB) {nameComparison = 1;}
+
+        let timeScoreA = timesScore(a.offset, currentHour) ;
+        let timeScoreB = timesScore(b.offset, currentHour);
+        let timeScoreComparison = 0;
+
+        if (timeScoreA < timeScoreB) {timeScoreComparison = 1;}
+        if (timeScoreA > timeScoreB) {timeScoreComparison = -1;}
+
+        return timeScoreComparison || nameComparison;
+     });
 
      })
      .catch(popupAjaxError)
