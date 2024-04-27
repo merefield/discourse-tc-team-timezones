@@ -24,5 +24,4 @@ team_timezones_availability_origin_offset:
   max: 12
 team_timezones_morning_start: 9
 team_timezones_evening_start: 18
-team_timezones_background_colour: '#FFFFFF'
 team_timezones_available_colour: '#0088cc'

@@ -94,6 +94,8 @@ export default class TeamDisplayComponent extends Component {
 
         let row = [];
 
+        let backgroundColour = getComputedStyle(document.body).getPropertyValue('--secondary');
+
         for (let index = 0; index < 24; index++) {
           row.push(
             {
@@ -105,8 +107,7 @@ export default class TeamDisplayComponent extends Component {
                     .team_timezones_available_colour
                 ),
                 hexToRgb(
-                  settings
-                    .team_timezones_background_colour
+                  backgroundColour
                 )
               )};`,
             })
